@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Final-Project</title>
+    <link href="style.css" rel="stylesheet" type="text/css" /> 
+     <!-- Bootstrap CSS library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    <!-- Bootstrap jquery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Mustache library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    
+    <!-- Bootstrap JS library -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="c3.css"></script>
+    <script src="c3.js"></script>
+    <script src="d3.js"></script>
+
+
+    <script type="text/html" id="Template">
+      <div class='card'>
+        <div class="panel-group">
+            <div class="panel-success">
+              <div class="panel-heading">
+        <ul>
+          <h4><strong>Building:</strong> {{building}} </p></div>
+
+          </h4><li><strong>Borough:</strong> {{borough}} </p></li>
+
+          <p><li><strong>Address:</strong> {{location_1_address}} </p></li>
+
+          <p><li><strong>Latitude:</strong> {{latitude}} </p></li>
+
+          <p><li><strong>Longitude:</strong> {{longitude}} </p></li>
+
+          <p><li><strong>Supervisor Name:</strong> {{custodial_borough_supervisor_name}} </p></li>
+
+          <p><li><strong>Supervisor Number:</strong> {{custodial_borough_supervisor_phone}} </p></li>
+
+          <p><li><strong>Engineering:</strong> {{engineering}} </p></li>
+
+          <p><li><strong>Security:</strong> {{security}} </p></li>
+
+        </ul>
+        </div>
+        </div>
+
+          <a href="https://www.mapquestapi.com/staticmap/v5/map?key=uFLPy1ABKLxeC5gHQT4VdCgeO4VKf9Yt&locations={{latitude}},{{longitude}}&zoom=14&size=@2x&type=hyb" target="_blank"><img id = "map" src="https://www.mapquestapi.com/staticmap/v5/map?key=uFLPy1ABKLxeC5gHQT4VdCgeO4VKf9Yt&locations={{latitude}},{{longitude}}&zoom=14&size=@2x&type=hyb"></a>
+      </div>
+    </script>
+  </head>
+
+    <body id= "body" onload="getData()">
+        <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="main.html">Data</a>
+    </div>
+    <a href="https://data.cityofnewyork.us/resource/7xt9-rk8d.json" target="_blank"><img id ="logo" src="https://pbs.twimg.com/media/DbAcgHZX0AAS87w.png"></a>
+    
+    <a href = "https://jsoneditoronline.org/?url=https%3A%2F%2Fdata.cityofnewyork.us%2Fresource%2F7xt9-rk8d.json" target="_blank"><img id = "logo2" src = "https://www1.nyc.gov/assets/home/images/programs/DCAS-Newsletter.jpg"></a>
+
+<div class= "container"><div class="jumbotron"
+  id="h1h">
+    <marquee><h1>DCAS Managed Public Buildings</h1></marquee>
+    <marquee><h3>[Source: NYC Open Data]</h3></marquee></div><hr><br>
+    <a href="index.html" class="btn btn-danger" role="button">Back</a><br>
+    <input type="text" id="request2" placeholder="Enter address">
+    <input type="button" value="Display Address" onclick="showAddress()"><br>
+
+    <input type="text" id="request" placeholder="Enter borough">	
+    <input type="button" value="Display Borough" onclick="showBorough()"><br>
+    
+    <input type="button" value="Display Chart" onclick="Graph()">
+    <div id="myChart"></div>
+    <div id="output"></div>
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="container">
+  <div class="jumbotron" id="footer">
+    <div>
+       <marquee><p id = "p"> <strong>Created using HTML, JavaScript, Bootstrap, CSS, jQuery, C3 and D3// Made By Ivan Wang </strong></p></marquee><hr>
+      <marquee><p id = "p"> <strong>Contact Info: iwang1959@baysidehighschool.org</strong></p></marquee> 
+  </div>        
+  </div>
+
+  </body>
+</html>
+
+
